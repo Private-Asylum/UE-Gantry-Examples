@@ -5,6 +5,7 @@
 #include "GantryExamplesEditorLogCategories.h"
 #include "Toolbar/GTEditorCommands.h"
 
+#include "AssetRegistry/AssetData.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Framework/Commands/UICommandList.h"
 #include "ISettingsModule.h"

@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "AssetRegistry/AssetData.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 
 #include "GTEditorUtilityLibrary.generated.h"

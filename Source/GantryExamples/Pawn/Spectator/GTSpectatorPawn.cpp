@@ -4,6 +4,8 @@
 
 #include "GantryExamplesLogCategories.h"
 
+#include "GameFramework/Controller.h"
+
 AGTSpectatorPawn::AGTSpectatorPawn(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {

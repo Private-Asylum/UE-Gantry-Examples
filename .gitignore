@@ -93,3 +93,7 @@ DerivedDataCache/*
 
 #Plugins
 Plugins/Marketplace/
+
+# Gantry plugin: its own repo (UE-Gantry), cloned here for development.
+# Buyers install it from Fab into the engine, so the example project never ships it.
+Plugins/Gantry/

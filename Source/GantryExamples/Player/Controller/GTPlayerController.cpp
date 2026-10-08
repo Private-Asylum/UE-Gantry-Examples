@@ -11,6 +11,8 @@
 #include "Player/State/GTPlayerState.h"
 
 #include "EnhancedInputSubsystems.h"
+#include "Engine/LocalPlayer.h"
+#include "GameFramework/Pawn.h"
 #include "GameFramework/PlayerState.h"
 #include "InputMappingContext.h"
 

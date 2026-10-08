@@ -29,15 +29,7 @@
 	],
 	"Plugins": [
 		{
-			"Name": "GantryCore",
-			"Enabled": true
-		},
-		{
-			"Name": "GantryGauge",
-			"Enabled": true
-		},
-		{
-			"Name": "GantryExperience",
+			"Name": "Gantry",
 			"Enabled": true
 		},
 		{
