@@ -1,0 +1,8 @@
+# Gantry public headers whose narrative is deliberately NOT published.
+#
+# The publish gate (PVAS-DocGen, `docgen.py check`) demands that every narrative
+# block be DECIDED about: cleared with `// @doc` above the block, or listed here
+# with the reason. An entry that later grows a marker is an error, so this list
+# cannot rot into a licence nobody reviews.
+#
+# path relative to Plugins/Gantry/Source/        # why

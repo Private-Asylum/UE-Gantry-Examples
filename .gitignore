@@ -94,6 +94,6 @@ DerivedDataCache/*
 #Plugins
 Plugins/Marketplace/
 
-# Gantry plugin: its own repo (UE-Gantry), cloned here for development.
-# Buyers install it from Fab into the engine, so the example project never ships it.
-Plugins/Gantry/
+# Every plugin here is its own repo, cloned in for development: Gantry (UE-Gantry)
+# ships from Fab into the engine, PVAS-DocGen (UE-PVAS-DocGen) never ships at all.
+Plugins/
