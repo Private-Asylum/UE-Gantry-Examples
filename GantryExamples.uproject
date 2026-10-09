@@ -3,30 +3,6 @@
 	"EngineAssociation": "51821BD7-C523-4665-94B9-2E4D26D6EAFC",
 	"Category": "",
 	"Description": "",
-	"Modules": [
-		{
-			"Name": "GantryExamples",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"Engine",
-				"CoreUObject",
-				"AIModule",
-				"EnhancedInput",
-				"GameplayTags",
-				"UMG"
-			]
-		},
-		{
-			"Name": "GantryExamplesEditor",
-			"Type": "Editor",
-			"LoadingPhase": "PostEngineInit",
-			"AdditionalDependencies": [
-				"Engine",
-				"UnrealEd"
-			]
-		}
-	],
 	"Plugins": [
 		{
 			"Name": "Gantry",
@@ -34,6 +10,14 @@
 		},
 		{
 			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "YardCore",
+			"Enabled": true
+		},
+		{
+			"Name": "YardCrateRush",
 			"Enabled": true
 		},
 		{
