@@ -95,10 +95,22 @@ DerivedDataCache/*
 Plugins/Marketplace/
 DocGen/
 
-# Every plugin here is its own repo, cloned in for development: Gantry (UE-Gantry)
-# ships from Fab into the engine, PVAS-DocGen (UE-PVAS-DocGen) never ships at all.
-Plugins/
+# Plugins cloned in for development are their own repos: Gantry (UE-Gantry) ships from Fab into
+# the engine, PVAS-DocGen (UE-PVAS-DocGen) never ships at all. The example's own game feature
+# plugins (Plugins/GameFeatures/) are part of this project and tracked here.
+/Plugins/Gantry/
+/Plugins/PVAS-DocGen/
 
-# Local development project: GantryExamples.uproject plus editor-only dev tooling (Python,
-# MCP server and toolsets). Never shipped; open this one locally.
+# Local development project: Dev/GantryExamplesDev.uproject is GantryExamples plus editor-only dev
+# tooling (Python, MCP server and toolsets, the Blueprint scripting backport). It lives in its own
+# folder, with Content, Config and Plugins symlinked to these, because the project is
+# Blueprint-only: UnrealBuildTool generates each project file's targets and a stub module into
+# Intermediate/Source, and two project files sharing one folder compile each other's stubs.
+/Dev/
 *-dev.uproject
+
+# Local authoring tooling (e.g. Plugins/Dev/BlueprintScriptingBackport). Never part of the example.
+/Plugins/Dev/
+
+# Authoring and test tooling lives outside this repo (private); never commit it here.
+/Tools/
