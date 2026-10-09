@@ -93,7 +93,12 @@ DerivedDataCache/*
 
 #Plugins
 Plugins/Marketplace/
+DocGen/
 
 # Every plugin here is its own repo, cloned in for development: Gantry (UE-Gantry)
 # ships from Fab into the engine, PVAS-DocGen (UE-PVAS-DocGen) never ships at all.
 Plugins/
+
+# Local development project: GantryExamples.uproject plus editor-only dev tooling (Python,
+# MCP server and toolsets). Never shipped; open this one locally.
+*-dev.uproject
