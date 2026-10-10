@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Yardrush: Demolition (DLC)",
+	"Description": "A round mode the yard lists but does not ship: editor-only and never cooked, so packaged games show it as not installed, from the snapshot the cook leaves behind.",
+	"Category": "Game Features",
+	"CreatedBy": "Private Asylum",
+	"CreatedByURL": "https://privateasylum.com/",
+	"DocsURL": "https://privateasylum.com/gantry/",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"ExplicitlyLoaded": true,
+	"EnabledByDefault": false,
+	"BuiltInInitialFeatureState": "Registered",
+	"Plugins": [
+		{
+			"Name": "Gantry",
+			"Enabled": true
+		}
+	]
+}
