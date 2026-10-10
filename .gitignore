@@ -114,3 +114,12 @@ DocGen/
 
 # Authoring and test tooling lives outside this repo (private); never commit it here.
 /Tools/
+
+# Release metadata from packaging with -createreleaseversion; mods cook against it locally.
+/Releases/
+
+# Mods are tracked as source (their .uplugin, Config and Content). What cooking them produces is not.
+/Mods/*/Content/Paks/
+/Mods/*/Saved/
+/Mods/*/Intermediate/
+/Mods/*/Binaries/

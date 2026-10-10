@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "51821BD7-C523-4665-94B9-2E4D26D6EAFC",
+	"EngineAssociation": "{51821BD7-C523-4665-94B9-2E4D26D6EAFC}",
 	"Category": "",
 	"Description": "",
 	"Plugins": [
@@ -19,6 +19,29 @@
 		{
 			"Name": "YardCrateRush",
 			"Enabled": true
+		},
+		{
+			"Name": "YardHotCrate",
+			"Enabled": true
+		},
+		{
+			"Name": "YardKing",
+			"Enabled": true
+		},
+		{
+			"Name": "YardTag",
+			"Enabled": true
+		},
+		{
+			"Name": "YardNightShift",
+			"Enabled": true
+		},
+		{
+			"Name": "YardDemolition",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
 		},
 		{
 			"Name": "DataValidation",
