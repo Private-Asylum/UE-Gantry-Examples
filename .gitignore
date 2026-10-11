@@ -97,9 +97,10 @@ DocGen/
 
 # Plugins cloned in for development are their own repos: Gantry (UE-Gantry) ships from Fab into
 # the engine, PVAS-DocGen (UE-PVAS-DocGen) never ships at all. The example's own game feature
-# plugins (Plugins/GameFeatures/) are part of this project and tracked here.
-/Plugins/Gantry/
-/Plugins/PVAS-DocGen/
+# plugins (Plugins/GameFeatures/) are part of this project and tracked here. Plugins/Gantry may be a
+# folder or a link to a checkout elsewhere, hence no trailing slash.
+/Plugins/Gantry
+/Plugins/PVAS-DocGen
 
 # Local development project: Dev/GantryExamplesDev.uproject is GantryExamples plus editor-only dev
 # tooling (Python, authoring toolsets, the Blueprint scripting backport). It lives in its own
@@ -123,3 +124,7 @@ DocGen/
 /Mods/*/Saved/
 /Mods/*/Intermediate/
 /Mods/*/Binaries/
+/ModsWithProblems/*/Content/Paks/
+/ModsWithProblems/*/Saved/
+/ModsWithProblems/*/Intermediate/
+/ModsWithProblems/*/Binaries/

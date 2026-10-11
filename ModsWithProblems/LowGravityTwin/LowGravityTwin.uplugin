@@ -1,0 +1,27 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Low Gravity Twin (example of a broken mod)",
+	"Description": "A deliberately broken example: Low Gravity's folder copied and the plugin renamed, nothing else. Its experience keeps the original's tag, guid and asset name, and Gantry reports all three clashes. Kept out of the game's mod directories (it lives in ModsWithProblems/); see Mods/README.md.",
+	"Category": "Game Features",
+	"CreatedBy": "Private Asylum",
+	"CreatedByURL": "https://privateasylum.com/",
+	"DocsURL": "https://privateasylum.com/gantry/",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"ExplicitlyLoaded": true,
+	"EnabledByDefault": false,
+	"BuiltInInitialFeatureState": "Registered",
+	"Plugins": [
+		{
+			"Name": "Gantry",
+			"Enabled": true
+		},
+		{
+			"Name": "YardCrateRush",
+			"Enabled": true
+		}
+	]
+}
