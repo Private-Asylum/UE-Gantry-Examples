@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Double Score (example mod)",
+	"Description": "An example mod that hooks the game: every crate scored in Crate Rush is worth twice its points. Its stage listens to the game's Crate Scored hook; the game never names it.",
+	"Category": "Game Features",
+	"CreatedBy": "Private Asylum",
+	"CreatedByURL": "https://privateasylum.com/",
+	"DocsURL": "https://privateasylum.com/gantry/",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"ExplicitlyLoaded": true,
+	"EnabledByDefault": false,
+	"BuiltInInitialFeatureState": "Registered",
+	"Plugins": [
+		{
+			"Name": "Gantry",
+			"Enabled": true
+		}
+	]
+}

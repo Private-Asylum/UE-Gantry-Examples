@@ -1,15 +1,41 @@
 # Yardrush mods
 
-Three example mods for Yardrush, built the way anyone outside the studio would build one. The
-game never names them: it says only that mods live in `Mods/` next to its `.uproject`
-(Project Settings > Gantry Experience > Mod Directories, with Mount Mods At Startup on). Each mod
+Four example mods for Yardrush, built the way anyone outside the studio would build one. The
+game never names them: it says only that mods live in `Mods/` next to its `.uproject` (Project
+Settings > Plugins > Gantry Experience > Mod Directories, with Mount Mods At Startup on). Each mod
 finds its own place through experience tags.
 
 | Mod | What it shows |
 |---|---|
 | `LowGravity` | A new round. Its experience sets **Attach To** `Experience.Yard`, so it joins the game's list of rounds, and the lobby can vote for it. It reuses Crate Rush's game feature and adds its own, which makes every character floaty. |
 | `ShinyCrates` | An augment to an existing round. Its experience **Extends** `Experience.Yard.CrateRush`, so whenever Crate Rush runs, Shiny Crates joins its chain. Its game feature adds a component to Crate Rush's crates: a random paint, and one crate in eight is gold and worth 3. |
+| `DoubleScore` | A mod that hooks the game. Its experience **Extends** `Experience.Yard.CrateRush`; its one stage (Server Only) listens to the game's **Crate Scored** hook (`Yard.Hook.CrateScored`) with Listen For Hook, and doubles the points each crate carries before the crate scores them. The game declares the hook and runs it; the mod needs nothing else from it. |
 | `LowGravityFuture` | A mod made for a newer game. Its experience's **Metadata > Required Game Version** is 2.0, so on this build Gantry lists it as incompatible, with the reason, and never activates it. |
+
+## What the game offers mods
+
+- **Channels.** Yardrush declares its channels in a Channel Set (`DA_YR_Channels`, listed in
+  Project Settings > Plugins > Gantry Core > Channel Sets): `Yard.Message.RoundStarted`, sent as
+  each round starts, and `Yard.Hook.CrateScored`, a hook every scored crate runs on the server with
+  the crate, the team and the points (`S_YR_CrateScore`). A listener may change the points, or cancel and the
+  crate scores nothing. With Warn On Undeclared Channels on, anything sending on a channel nobody
+  declared is logged.
+- **The API manifest.** Blueprint types carry no markup, so the game lists what it offers in Gantry
+  Core's API Allowlist: the channel payloads with all their fields, the character with Interact and
+  On Interact, and the crate with Points, Score and Scored. The editor writes it, with the
+  channels, into `Config/DefaultGantryAPI.ini`.
+- **Components.** Characters and bots are in Gantry Experience's Automatic Receiver Classes, so game
+  features (and mods) add components to them without either registering itself. Crate Rush's
+  crates register themselves: they belong to its game feature.
+- **Data patches.** A mod's game feature can carry a Patch Data action: values of assets or class
+  defaults, and DataTable rows, changed while it is active and put back after.
+
+## Turning mods off
+
+Settings > Mods lists every mod found, with a toggle each (built in Blueprint, `BP_YR_ModsProvider`).
+A mod turned off stays in `Mods/` and is not loaded, nor is anything that builds on it; the choice
+is the player's, in `Saved/Config/<platform>/GantryMods.ini`. `Gantry.Mods.Disable <Mod>` and
+`Gantry.Mods.Enable <Mod>` do the same from the console.
 
 ## A mod's folder
 
@@ -82,8 +108,8 @@ make one per platform you ship.
 
 ## Dropping a mod in while the game runs
 
-Yardrush looks at `Mods/` every two seconds while it runs (Project Settings > Gantry Experience >
-Mod Rescan Interval). A mod folder or `.gantry` file copied in is mounted within a moment; the
+Yardrush looks at `Mods/` every two seconds while it runs (Project Settings > Plugins > Gantry
+Experience > Mod Rescan Interval). A mod folder or `.gantry` file copied in is mounted within a moment; the
 game says "Mods installed", and the mod's rounds are offered from the next lobby. Removing or
 replacing a mod takes effect at the next start, or at `Gantry.Mods.Remount` (a mod whose round is
 running stays until the round ends).
@@ -101,8 +127,10 @@ mods only. Yardrush, a Blueprint-only example, is always the latter.
 
 The server decides the round and every client must be able to run the same chain of
 experiences. A client without a mod the server is running refuses the round: Gantry reports why,
-naming both chains, and Yardrush shows it on its "Can't play this round" screen. Install the same
-mods on every machine.
+naming both chains, and Yardrush shows it on its "Can't play this round" screen. So does a client
+whose copy of a mod in the chain is another version from the server's: Gantry names the mod and
+both content ids. A mod's content id is the same for every platform, and for server and client
+cooks of the same source. Install the same mods, in the same versions, on every machine.
 
 ## When Gantry refuses a mod
 
@@ -131,7 +159,8 @@ Allowed, never silent. After each mount Gantry lists, and `Gantry.Mods.Report` p
 Cooked the stock way, a mod holds only its own content: the cook refuses anything it uses that the
 release does not already hold, another mod's content included. So the usual clash is not two
 copies of one asset but two mods claiming one identity. `ModsWithProblems/LowGravityTwin` is
-exactly that: Low Gravity's folder copied and the plugin renamed, nothing else, so its experience
-keeps Low Gravity's tag, guid and asset name. It sits outside `Mods/` so ordinary runs never see
-it; add `ModsWithProblems` to Mod Directories (Project Settings > Gantry Experience) and mount, and
-Gantry reports all three clashes while the round list keeps the original.
+exactly that: Low Gravity's folder copied and the plugin renamed (with a description that says
+so), nothing else, so its experience keeps Low Gravity's tag, guid and asset name. It sits outside
+`Mods/` so ordinary runs never see it; add `ModsWithProblems` to Mod Directories (Project
+Settings > Plugins > Gantry Experience) and mount, and Gantry reports all three clashes while the
+round list keeps the original.
